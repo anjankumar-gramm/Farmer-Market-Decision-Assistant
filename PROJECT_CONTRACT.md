@@ -187,3 +187,118 @@ POST /api/recommend
 11. Test before pushing.
 12. Do not commit passwords or API keys.
 13. Changes to the project contract must be approved by the Project Architect.
+
+## 11. File Ownership
+
+### Anjankumar Arulmani
+Role: Project Architect & Team Leader
+
+Primary responsibility:
+- Project integration
+- System architecture
+- Shared code review
+- Final integration
+- GitHub main branch management
+
+Can modify:
+- All project files when required for integration
+
+
+### Siddarth Shravan
+Role: UI/UX Designer & Documentation Lead
+
+Primary responsibility:
+- UI/UX design
+- Documentation
+- README
+- Project diagrams
+
+Primary files:
+- README.md
+- documentation/
+
+
+### Aleena Fathima
+Role: AI/ML Model Developer
+
+Primary responsibility:
+- Price prediction module
+- Dataset preparation
+- Model training
+- Model evaluation
+
+Primary files:
+- ml/
+
+
+### Akshay Ajith
+Role: Backend & Database Developer
+
+Primary responsibility:
+- Flask backend
+- REST APIs
+- MySQL database
+- Business logic
+
+Primary files:
+- app.py
+- database.py
+- database/schema.sql
+
+
+### Mohammed Arish
+Role: Testing & Quality Assurance Lead
+
+Primary responsibility:
+- Functional testing
+- API testing
+- Integration testing
+- Bug reporting
+
+Primary files:
+- tests/
+
+
+### Aratrika Biswas
+Role: Frontend Developer
+
+Primary responsibility:
+- HTML
+- CSS
+- JavaScript
+- Frontend API integration
+
+Primary files:
+- templates/
+- static/
+
+## 12. Shared Development Rules
+
+1. Do not modify another member's primary files without informing them.
+
+2. app.py is primarily maintained by the Backend Developer.
+
+3. database.py and database/schema.sql are primarily maintained by the Backend Developer.
+
+4. ml/ is primarily maintained by the AI/ML Developer.
+
+5. templates/ and static/ are primarily maintained by the Frontend Developer.
+
+6. tests/ is primarily maintained by the Testing & QA Lead.
+
+7. README.md and documentation/ are primarily maintained by the Documentation Lead.
+
+8. The Project Architect has final authority over integration and shared files.
+
+9. If a new function is required, check PROJECT_CONTRACT.md before creating it.
+
+10. If an existing function already performs the required operation, reuse it instead of creating another function.
+
+11. If an API endpoint, database field, function name, or variable name needs to be changed, notify the Project Architect before changing it.
+
+12. Every Pull Request must clearly state:
+   - What was changed
+   - Which files were changed
+   - How it was tested
+   - Whether any existing functionality was affected.
+     
