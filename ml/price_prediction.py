@@ -1,9 +1,10 @@
 import pandas as pd
 import joblib
+import numpy as np
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 def predict_price(model, x):
@@ -48,10 +49,16 @@ def train_price_model():
 
     predictions = model.predict(X_test)
 
-    error = mean_absolute_error(y_test, predictions)
+    mae = mean_absolute_error(y_test, predictions)
+    mse = mean_squared_error(y_test, predictions)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, predictions)
 
     print("Model trained successfully")
-    print("Mean Absolute Error:", error)
+    print("Mean Absolute Error (MAE):", mae)
+    print("Mean Squared Error (MSE):", mse)
+    print("Root Mean Squared Error (RMSE):", rmse)
+    print("R2 Score:", r2)
 
     joblib.dump(model, "ml/price_model.pkl")
 
@@ -66,3 +73,5 @@ def load_price_model():
 
 if __name__ == "__main__":
     train_price_model()
+    
+
